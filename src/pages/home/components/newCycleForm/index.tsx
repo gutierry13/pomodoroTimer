@@ -1,7 +1,7 @@
 import {  useFormContext } from "react-hook-form";
 import { FormContainer, MinutesAmountInput, TaskInput } from "./styles";
 import { useContext } from "react";
-import { CyclesContext } from "../..";
+import { CyclesContext } from "../../../../context/ClyclesContext";
 
 
 export function NewCycleForm(){
@@ -10,7 +10,7 @@ export function NewCycleForm(){
   return (
     
     <FormContainer>
-    <label htmlFor="task">Vou trabalhar </label>
+    <label htmlFor="task">Vou trabalhar em</label>
     <TaskInput
       type="text"
       id="task"
