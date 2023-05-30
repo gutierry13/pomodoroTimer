@@ -10,7 +10,7 @@ export function NewCycleForm(){
   return (
     
     <FormContainer>
-    <label htmlFor="task">Vou trabalhar </label>
+    <label htmlFor="task">Vou trabalhar em</label>
     <TaskInput
       type="text"
       id="task"
