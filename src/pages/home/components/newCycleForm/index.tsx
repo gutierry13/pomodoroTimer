@@ -3,7 +3,6 @@ import { FormContainer, MinutesAmountInput, TaskInput } from "./styles";
 import { useContext } from "react";
 import { CyclesContext } from "../../../../context/ClyclesContext";
 
-
 export function NewCycleForm(){
   const {activeCycle} = useContext(CyclesContext)
   const {register} = useFormContext()
@@ -30,7 +29,7 @@ export function NewCycleForm(){
       placeholder="00"
       {...register('duration', { valueAsNumber: true })}
       step={5}
-      min={1}
+      min={5}
       max={60}
     />
     <span>Minutos</span>
