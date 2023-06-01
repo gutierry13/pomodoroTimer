@@ -2,7 +2,7 @@ import { HandPalm, Play } from 'phosphor-react'
 import {
   HomeContainer,
   StartCountDownButton,
-  StopCountDownButton
+  StopCountDownButton,
 } from './styles'
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -17,7 +17,7 @@ const newCycleFormValidationSchema = zod.object({
   duration: zod
     .number()
     .min(1, 'Informe a duração')
-    .max(60, 'Duração deve ser entre 1 e 60 minutos')
+    .max(60, 'Duração deve ser entre 1 e 60 minutos'),
 })
 type NewCycleData = zod.infer<typeof newCycleFormValidationSchema>
 export function Home() {
@@ -27,8 +27,8 @@ export function Home() {
     resolver: zodResolver(newCycleFormValidationSchema),
     defaultValues: {
       task: '',
-      duration: 0
-    }
+      duration: 0,
+    },
   })
 
   const { handleSubmit, watch, reset } = newCycleForm
@@ -40,27 +40,18 @@ export function Home() {
 
   return (
     <HomeContainer>
-      <form
-        action=""
-        onSubmit={handleSubmit(handleCreateNewCycle)}
-      >
+      <form action="" onSubmit={handleSubmit(handleCreateNewCycle)}>
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>
         <CountDown />
         {activeCycle ? (
-          <StopCountDownButton
-            type="button"
-            onClick={InterruptCycle}
-          >
+          <StopCountDownButton type="button" onClick={InterruptCycle}>
             <HandPalm size={24} />
             Interromper
           </StopCountDownButton>
         ) : (
-          <StartCountDownButton
-            disabled={!task}
-            type="submit"
-          >
+          <StartCountDownButton disabled={!task} type="submit">
             <Play size={24} />
             Começar
           </StartCountDownButton>
