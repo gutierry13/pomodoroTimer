@@ -1,10 +1,16 @@
-import { useContext, useEffect } from "react";
-import { CountDownContainer, Separator } from "./styles";
-import { differenceInSeconds } from "date-fns";
-import { CyclesContext } from "../../../../context/ClyclesContext";
+import { useContext, useEffect } from 'react'
+import { CountDownContainer, Separator } from './styles'
+import { differenceInSeconds } from 'date-fns'
+import { CyclesContext } from '../../../../context/ClyclesContext'
 
 export function CountDown() {
-  const {activeCycle,activeCycleId,markNewCycleAsFinished,amountSecondsPassed,setSecondsPassed} = useContext(CyclesContext)
+  const {
+    activeCycle,
+    activeCycleId,
+    markNewCycleAsFinished,
+    amountSecondsPassed,
+    setSecondsPassed,
+  } = useContext(CyclesContext)
   const totalSeconds = activeCycle ? activeCycle.duration * 60 : 0
   const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0
   const minutesAmount = Math.floor(currentSeconds / 60)
@@ -15,7 +21,7 @@ export function CountDown() {
   useEffect(() => {
     if (activeCycle) {
       document.title = `${minutes}:${seconds}`
-    }else{
+    } else {
       document.title = 'Pomodoro Timer'
     }
   }, [minutes, seconds, activeCycle])
@@ -26,7 +32,7 @@ export function CountDown() {
       interval = setInterval(() => {
         const secondsDifference = differenceInSeconds(
           new Date(),
-          activeCycle.startDate
+          activeCycle.startDate,
         )
 
         if (secondsDifference >= totalSeconds) {
@@ -42,15 +48,20 @@ export function CountDown() {
     return () => {
       clearInterval(interval)
     }
-  }, [activeCycle, totalSeconds, activeCycleId,markNewCycleAsFinished])
-return(        
-  <CountDownContainer>
-    <span>{minutes[0]}</span>
-    <span>{minutes[1]}</span>
-    <Separator>:</Separator>
-    <span>{seconds[0]}</span>
-    <span>{seconds[1]}</span>
-  </CountDownContainer>
-)
-
+  }, [
+    activeCycle,
+    totalSeconds,
+    activeCycleId,
+    markNewCycleAsFinished,
+    setSecondsPassed,
+  ])
+  return (
+    <CountDownContainer>
+      <span>{minutes[0]}</span>
+      <span>{minutes[1]}</span>
+      <Separator>:</Separator>
+      <span>{seconds[0]}</span>
+      <span>{seconds[1]}</span>
+    </CountDownContainer>
+  )
 }
