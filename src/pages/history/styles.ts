@@ -9,6 +9,35 @@ export const HistoryContainer = styled.main`
     font-size: 1.5rem;
     color: ${(props) => props.theme['gray-100']};
   }
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+    div {
+      table {
+        min-width: 400px;
+        td {
+          &:first-child {
+            padding-left: 1.5rem;
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    padding: 0.875rem;
+    div {
+      table {
+        min-width: 240px;
+        td {
+          &:first-child {
+            padding-left: 1.5rem;
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
 `
 export const HistoryList = styled.div`
   flex: 1;
