@@ -13,7 +13,11 @@ export const LayoutContainer = styled.div`
   @media (max-width: 600px) {
     margin: 8rem auto;
   }
-  /* @media (max-width: 480px) {
-    margin: 9rem auto;
-  } */
+  @media (max-width: 400) {
+    button {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.75rem;
+    }
+  }
 `

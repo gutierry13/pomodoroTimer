@@ -30,4 +30,9 @@ body,input,textarea,button{
       font-size: 75%;
     }
   }
+@media (max-width: 400px) {
+    :root{
+      font-size: 62.5%;
+    }
+  }
 `
