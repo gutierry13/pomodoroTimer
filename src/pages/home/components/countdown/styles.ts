@@ -12,6 +12,11 @@ export const CountDownContainer = styled.div`
     padding: 2rem 1rem;
     border-radius: 8px;
   }
+  @media (max-width: 480px) {
+    font-size: 8rem;
+    line-height: 4rem;
+    gap: 0.5rem;
+  }
 `
 export const Separator = styled.div`
   padding: 2rem 0;

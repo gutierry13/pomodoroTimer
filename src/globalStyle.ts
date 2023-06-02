@@ -20,4 +20,14 @@ body,input,textarea,button{
   font-weight: 400;
   font-size: 1rem;
 }
+@media (max-width: 800px) {
+    :root{
+      font-size: 87.5%;
+    }
+  }
+@media (max-width: 600px) {
+    :root{
+      font-size: 75%;
+    }
+  }
 `

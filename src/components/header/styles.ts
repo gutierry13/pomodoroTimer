@@ -23,4 +23,13 @@ export const HeaderContainer = styled.header`
       }
     }
   }
+  @media (max-width: 800px) {
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 600px) {
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 480px) {
+    margin-bottom: 2rem;
+  }
 `
