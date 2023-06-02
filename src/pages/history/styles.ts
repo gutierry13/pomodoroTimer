@@ -38,6 +38,21 @@ export const HistoryContainer = styled.main`
       }
     }
   }
+  @media (max-width: 400px) {
+    overflow: auto;
+    padding: 0.5rem;
+    div {
+      table {
+        min-width: 350px;
+        td {
+          &:first-child {
+            padding-left: 1.5rem;
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
 `
 export const HistoryList = styled.div`
   flex: 1;

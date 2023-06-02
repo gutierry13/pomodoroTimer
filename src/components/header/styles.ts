@@ -32,4 +32,18 @@ export const HeaderContainer = styled.header`
   @media (max-width: 480px) {
     margin-bottom: 2rem;
   }
+  @media (max-width: 400px) {
+    margin-bottom: 2rem;
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+    nav {
+      gap: 1.2rem;
+      a {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
 `

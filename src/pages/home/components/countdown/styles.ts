@@ -17,6 +17,11 @@ export const CountDownContainer = styled.div`
     line-height: 4rem;
     gap: 0.5rem;
   }
+  @media (max-width: 400px) {
+    font-size: 8rem;
+    line-height: 3rem;
+    gap: 0.5rem;
+  }
 `
 export const Separator = styled.div`
   padding: 2rem 0;
@@ -25,4 +30,8 @@ export const Separator = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: center;
+  @media (max-width: 400px) {
+    width: 3rem;
+    line-height: 1.75rem;
+  }
 `
